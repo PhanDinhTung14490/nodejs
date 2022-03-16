@@ -2,10 +2,10 @@
 import express from "express";
 import { response } from "express";
 import { request } from "express";
-import homeRoute from './routes/home'
-import productsRoute  from './routes/products'
+import homeRoute from './src/controllers/routes/home'
+import productsRoute  from './src/controllers/routes/products'
 
-import { checkAuth } from './middlewares/checkAuth'
+import { checkAuth } from './src/middlewares/checkAuth'
 
 const app = express();
 app.use(express.json())
