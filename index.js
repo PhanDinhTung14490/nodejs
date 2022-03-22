@@ -2,6 +2,7 @@
 import express from "express";
 import mongoose from 'mongoose';
 import homeRoute from './src/routes/home'
+import categoryRoute  from './src/routes/category'
 import productsRoute  from './src/routes/products'
 import { checkAuth } from './src/middlewares/checkAuth'
 
@@ -13,6 +14,7 @@ app.use(express.json())
 app.use(homeRoute);
 
 app.use("/api",productsRoute);
+app.use("/api",categoryRoute);
 
 // mongoose.connect('mongodb://localhost:27017/we16308');
 // app.listen(8000, ()=>{
