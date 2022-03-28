@@ -1,10 +1,12 @@
 //Bước 1: incluce thư viện http
 import express from "express";
 import mongoose from 'mongoose';
-import homeRoute from './src/routes/home'
-import categoryRoute  from './src/routes/category'
-import productsRoute  from './src/routes/products'
+import homeRoute from './src/routes/home';
+import categoryRoute  from './src/routes/category';
+import productsRoute  from './src/routes/products';
+import authRoute from './src/routes/auth';
 import { checkAuth } from './src/middlewares/checkAuth'
+
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use(homeRoute);
 
 app.use("/api",productsRoute);
 app.use("/api",categoryRoute);
+app.use("/api",authRoute)
 
 // mongoose.connect('mongodb://localhost:27017/we16308');
 // app.listen(8000, ()=>{
